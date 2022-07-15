@@ -39,7 +39,9 @@ console.log(response);
 
 This code path generates a `DataItem`, signs it using your `privateKey` and sends it to `m-testnet.arweave.net:3000` using the `POST /tx` API. A more detailed explanation and comments on the sample code is provided in `/client/client.ts`. 
 
-### Sample Run
+## 3. Sample Run
+
+### Upload
 
 In order to test the default client, run
 ```
@@ -49,7 +51,8 @@ npm test <path-to-keyfile-json> <path-to-data-tobeuploaded>
 // DataItem id =  gRPbue7-beLrz9Z4pSuhx-I2vqbd1JYBTfleg2lheCI (this is the TX-ID)
 ```
 
-## 3. Fetch the uploaded tx
+### Fetch
+
 After uploading a data item, wait a few seconds (maximum of 10s) for the data to be included in the bundle and mined. 
  
 Then, trigger unbundling on the testnet with the following GET call (NOTE: this is not required on mainnet as bundled data items are immediately and automatically available using the next `GET /tx` call): 
