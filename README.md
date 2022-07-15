@@ -50,14 +50,15 @@ npm test <path-to-keyfile-json> <path-to-data-tobeuploaded>
 ```
 
 ## 3. Fetch the uploaded tx
-After uploading a DataItem, 
-First, trigger unbundling on the testnet with the following GET call: 
+After uploading a data item, wait a few seconds (maximum of 10s) for the data to be included in the bundle and mined. 
+ 
+Then, trigger unbundling on the testnet with the following GET call: 
 
 ```
 curl http://m-test.arweave.net:1984/mine
 ```
 
-Use the `GET /tx` endpoint to fetch the uploaded data item. 
+Finally, use the `GET /tx` endpoint to fetch the uploaded data item. 
 ```
 curl http://m-test.arweave.net:1984/<TX-ID>
 ```
