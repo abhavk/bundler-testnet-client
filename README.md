@@ -5,7 +5,7 @@ An Arweave testnet (with bundler enabled) has been set up on `m-testnet.arweave.
 In order to use the testnet, use the following steps. 
 
 ## 1. Generate wallet for Signing
-Generate an Arweave `RSA` key. This key will not contain any tokens or `AR` but will be used by your team to sign data uploads to the network. You can generate an Arweave key using: 
+Generate an Arweave `RSA` key. This key will be used for signing uploads and not tokens. You can generate an Arweave key using: 
 ### arweave-js
 
 [arweave-js](https://github.com/ArweaveTeam/arweave-js#create-a-new-wallet-and-private-key): 
@@ -22,7 +22,7 @@ arweave.wallets.generate().then((key) => {
 ### ArConnect
 [ArConnect](https://www.arconnect.io/): This is the main Arweave web wallet
 
-We will need this key to fund uploads signed by your private key before you go live on mainnet! 
+We will need you to tell us this key before you go live on mainnet! This key is required for signing the data only. You do not need to hold any tokens.
 
 ## 2. Use node client for uploads 
 
@@ -46,10 +46,16 @@ In order to test the default client, run
 npm install
 npm test <path-to-keyfile-json> <path-to-data-tobeuploaded>
 // Uploading file = client/futureinternet-11-00170.pdf
-// DataItem id =  gRPbue7-beLrz9Z4pSuhx-I2vqbd1JYBTfleg2lheCI 
+// DataItem id =  gRPbue7-beLrz9Z4pSuhx-I2vqbd1JYBTfleg2lheCI (this is the TX-ID)
 ```
 
 ## 3. Fetch the uploaded tx
+After uploading a DataItem, 
+First, trigger unbundling on the testnet with the following GET call: 
+
+```
+curl http://m-test.arweave.net:1984/mine
+```
 
 Use the `GET /tx` endpoint to fetch the uploaded data item. 
 ```
