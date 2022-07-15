@@ -5,7 +5,7 @@ An Arweave testnet (with bundler enabled) has been set up on `m-testnet.arweave.
 In order to use the testnet, use the following steps. 
 
 ## 1. Generate wallet for Signing
-Generate an Arweave `RSA` key. This key will not contain any tokens or `AR` but will be used by your team to sign data uploads to the network. You can generate an Arweave key using:
+Generate an Arweave `RSA` key. This key will not contain any tokens or `AR` but will be used by your team to sign data uploads to the network. You can generate an Arweave key using: 
     - [arweave-js](https://github.com/ArweaveTeam/arweave-js#create-a-new-wallet-and-private-key): 
 ```
 arweave.wallets.generate().then((key) => {
@@ -16,6 +16,7 @@ arweave.wallets.generate().then((key) => {
     //     "e": ...
 });
 ```
+
     - [ArConnect](https://www.arconnect.io/): This is the main Arweave web wallet
 
 We will need this key to fund uploads signed by your private key before you go live on mainnet! 
