@@ -1,0 +1,26 @@
+{
+  "name": "bundler-testnet-client",
+  "version": "1.0.0",
+  "description": "Sample client for an Arweave testnet with bundling enabled",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node client/client.ts"
+  },
+  "keywords": [
+    "arweave",
+    "bundlr"
+  ],
+  "author": "abhavk",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bundlr-network/client": "^0.7.14",
+    "@types/node": "^13.13.4",
+    "arbundles": "^0.6.13",
+    "arweave": "^1.10.23",
+    "express": "^4.17.2",
+    "toad-scheduler": "^1.6.0"
+  }
+}
