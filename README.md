@@ -58,7 +58,7 @@ After uploading a data item, wait a few seconds (maximum of 10s) for the data to
 Then, trigger unbundling on the testnet with the following GET call (NOTE: this is not required on mainnet as bundled data items are immediately and automatically available using the next `GET /tx` call): 
 
 ```
-curl http://m-test.arweave.net:1984/mine
+curl http://m-testnet.arweave.net:1984/mine
 ```
 
 Finally, use the `GET /tx` endpoint to fetch the uploaded data item. 
