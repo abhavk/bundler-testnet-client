@@ -103,3 +103,9 @@ Finally, use the `GET /tx` endpoint to fetch the uploaded data item.
 ```
 curl http://m-test.arweave.net:1984/<TX-ID>
 ```
+
+### Mainnet
+Run mainnet uploads with the following command
+```
+npm run upload <path-to-keyfile> <path-to-uploading-file>
+```
