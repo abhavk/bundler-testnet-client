@@ -35,8 +35,9 @@ Use the nodejs client to test file uploads.
 const bundler = new Bundlr("http://m-testnet.arweave.net:3000", "arweave", privateKey);
 ```
 
-Upload the file at `path` to the testnet. 
-```
+Upload the file at `path` to the testnet.
+
+```js
 const response = await bundler.uploadFile(path);
 console.log(response);
 ```
