@@ -1,24 +1,27 @@
 /*
-This file demonstrates uploading files to an Arweave testnet. 
+This file demonstrates uploading files to an Arweave testnet.
 */
 
 // This testnet is API compatible with bundlr-network's javascript-client
-import Bundlr from '@bundlr-network/client';
-const fs = require('fs');
+import Bundlr from "@bundlr-network/client";
+const fs = require("fs");
 
 // User wallet path specified in the second argument
 const user_wallet_path = process.argv[2];
-var privateKey = JSON.parse(fs.readFileSync(user_wallet_path))
+var privateKey = JSON.parse(fs.readFileSync(user_wallet_path));
 
 // Create a bundler client with the m-testnet.arweave.net server
-const bundler = new Bundlr("http://23.22.171.112:3000", "arweave", privateKey);
+const bundler = new Bundlr(
+  "http://bundler-alb-1830069855.us-east-1.elb.amazonaws.com",
+  "arweave",
+  privateKey
+);
 
 async function main(count) {
-
-	// Upload the file "count" times (default 1)
-	for (let i=0; i<count;i++) {
-		await uploadToBundler(process.argv[3]);
-	}
+  // Upload the file "count" times (default 1)
+  for (let i = 0; i < count; i++) {
+    await uploadToBundler(process.argv[3]);
+  }
 }
 
 // Upload files to the network and fetch the DataItem ID in response
