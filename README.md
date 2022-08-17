@@ -9,7 +9,7 @@ Generate an Arweave `RSA` key. This key will be used for signing uploads and not
 ### arweave-js
 
 [arweave-js](https://github.com/ArweaveTeam/arweave-js#create-a-new-wallet-and-private-key): 
-```
+```js
 arweave.wallets.generate().then((key) => {
     console.log(key);
     // {
