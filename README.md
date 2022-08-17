@@ -31,7 +31,7 @@ We will need you to tell us this key before you go live on mainnet! This key is 
 This generates a `DataItem`, signs it using your `privateKey` and sends it to `m-testnet.arweave.net:3000` using the `POST /tx` API. More details are available in the file `client/client.ts`.
 
 Use the nodejs client to test file uploads. 
-```
+```js
 const bundler = new Bundlr("http://m-testnet.arweave.net:3000", "arweave", privateKey);
 ```
 
@@ -46,17 +46,17 @@ console.log(response);
 This alternative code for uploading data does the same things that are shown above, but with a lower-level client so you can see the details of creating, signing and posting Arweave DataItems. Check out the file `client/postDirect.ts` for more details in the comments. 
 
 Read input
-```
+```js
 var data = Buffer.from(process.argv[3], "utf-8");
 ```
 
 Set tags to indicate `Content-Type`
-```
+```js
 const tags = [ { name: "Content-Type", value: "text/plain" } ];
 ```
 
 Create and sign a `DataItem`
-```
+```js
 const signer = new ArweaveSigner(privateKey);
 const dataItem = createData(
                 data,
@@ -67,7 +67,7 @@ await dataItem.sign(signer);
 ```
 
 Send a post transaction request
-```
+```js
 response = await instance.post('/tx/arweave', dataItem.getRaw(), {
         headers: { "Content-Type": "application/octet-stream" }
 });
@@ -78,7 +78,7 @@ response = await instance.post('/tx/arweave', dataItem.getRaw(), {
 ### Upload / Direct Upload
 
 In order to test the default client, run
-```
+```js
 npm install
 npm test <path-to-keyfile-json> <path-to-data-tobeuploaded>
 // Uploading file = client/futureinternet-11-00170.pdf
@@ -86,7 +86,7 @@ npm test <path-to-keyfile-json> <path-to-data-tobeuploaded>
 ```
 
 Alternatively, in order to upload using the low-level client making a direct `POST /tx` request, run
-```
+```js
 ts-node postDirect.ts <path-to-keyfile-json> "hello arweave"
 ```
 
@@ -96,17 +96,17 @@ After uploading a data item, wait a few seconds (maximum of 10s) for the data to
  
 Then, trigger unbundling on the testnet with the following GET call (NOTE: this is not required on mainnet as bundled data items are immediately and automatically available using the next `GET /tx` call): 
 
-```
+```js
 curl http://m-testnet.arweave.net:1984/mine
 ```
 
 Finally, use the `GET /tx` endpoint to fetch the uploaded data item. 
-```
+```js 
 curl http://m-test.arweave.net:1984/<TX-ID>
 ```
 
 ### Mainnet
 Run mainnet uploads with the following command
-```
+```js
 npm run upload <path-to-keyfile> <path-to-uploading-file>
 ```
