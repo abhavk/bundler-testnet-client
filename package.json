@@ -20,7 +20,7 @@
   "dependencies": {
     "@bundlr-network/client": "^0.7.14",
     "@types/node": "^13.13.4",
-    "arbundles": "^0.6.21",
+    "arbundles": "0.6.21",
     "arweave": "^1.10.23",
     "express": "^4.17.2",
     "toad-scheduler": "^1.6.0"

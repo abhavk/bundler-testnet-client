@@ -11,7 +11,7 @@ const user_wallet_path = process.argv[2];
 var privateKey = JSON.parse(fs.readFileSync(user_wallet_path))
 
 // Create a bundler client with the m-testnet.arweave.net server
-const bundler = new Bundlr("http://23.22.171.112:3000", "arweave", privateKey);
+const bundler = new Bundlr("http://m-mainnet.arweave.net", "arweave", privateKey);
 
 async function main(count) {
 
