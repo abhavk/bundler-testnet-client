@@ -18,7 +18,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bundlr-network/client": "^0.7.14",
+    "@bundlr-network/client": "^0.7.17",
     "@types/node": "^13.13.4",
     "arbundles": "0.6.21",
     "arweave": "^1.10.23",

@@ -9,7 +9,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@bundlr-network/client@^0.7.14":
+"@bundlr-network/client@^0.7.17":
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/@bundlr-network/client/-/client-0.7.17.tgz#0a4c41534640f9038e5d7d1d8cf1cc2571b185b7"
   integrity sha512-1qTDrwgmgeh0pO24JbeGt2W8GlpWYkVnQ8AhEZ02Lm00J7RALSyma3C5pNlKuvAQBczL1r9KhLr9KHK1og3J0g==
